@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id = "Address" class = "com.nitin.Address" >
+        <property name="zipcode" value = "10"></property>
+        <property name="address" value="Indirapuram"></property>
+    </bean>
+
+<bean id = "emp1" class = "com.nitin.Employee" init-method="myInit" destroy-method="myDestroy" parent="Address" autowire="byName">
+    <property name="eid" value = "10"></property>
+    <property name="ename" value="Nitin"></property>
+    <property name="gender" value="M"></property>
+    <property name="map">
+        <map>
+            <entry key = "1" value = "I  am the best"> </entry>
+            <entry key = "2" value = "I  am the greatest"> </entry>
+        </map>
+    </property>
+ <!--   <constructor-arg name="address" ref="address"></constructor-arg> -->
+
+</bean>
+
+    <bean id = "emp2" class = "com.nitin.Employee" init-method="myInit" destroy-method="myDestroy" parent="Address" autowire="byName">
+        <property name="eid" value = "101"></property>
+        <property name="ename" value="Nitin1"></property>
+        <property name="gender" value="M"></property>
+        <property name="map">
+            <map>
+             <entry key = "1" value = "I  am the best"> </entry>
+                <entry key = "2" value = "I  am the greatest"> </entry>
+            </map>
+        </property>
+   <!--     <constructor-arg name ="address" ref="address"></constructor-arg> -->
+
+    </bean>
+
+</beans>
