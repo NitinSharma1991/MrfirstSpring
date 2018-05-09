@@ -8,10 +8,11 @@
         <property name="address" value="Indirapuram"></property>
     </bean>
 
-<bean id = "emp1" class = "com.nitin.Employee" init-method="myInit" destroy-method="myDestroy" parent="Address" autowire="byName">
+<bean id = "emp1" class = "com.nitin.Employee" init-method="myInit" destroy-method="myDestroy" autowire="byName">
     <property name="eid" value = "10"></property>
     <property name="ename" value="Nitin"></property>
     <property name="gender" value="M"></property>
+    <property name="address1" ref="Address"> </property>
     <property name="map">
         <map>
             <entry key = "1" value = "I  am the best"> </entry>
@@ -22,8 +23,8 @@
 
 </bean>
 
-    <bean id = "emp2" class = "com.nitin.Employee" init-method="myInit" destroy-method="myDestroy" parent="Address" autowire="byName">
-        <property name="eid" value = "101"></property>
+    <bean id = "emp2" class = "com.nitin.Employee" init-method="myInit" destroy-method="myDestroy"  autowire="byName">
+        <property name="eid" value = "102"></property>
         <property name="ename" value="Nitin1"></property>
         <property name="gender" value="M"></property>
         <property name="map">

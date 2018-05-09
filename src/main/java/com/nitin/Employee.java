@@ -9,25 +9,30 @@ public class Employee extends Address{
 
 
 
-    public void setAddress(Address address) {
+    public void setAddress1(Address address) {
         this.address1 = address;
     }
 
     private Address address1;
-    private char gender;
-    private HashMap<Integer,String> map;
 
-    public HashMap getMap() {
+    public Address getAddress1() {
+        return address1;
+    }
+
+    private char gender;
+    private Map<Integer,String> map;
+
+    public Map getMap() {
         return map;
     }
 
-    public void setMap(HashMap map) {
+    public void setMap(Map map) {
         this.map = map;
     }
 
-    public Employee(){System.out.println("Initialized");}
+   // public Employee(){System.out.println("Initialized");}
 
-  /*  public Employee(int eid, String ename, Address address, char gender) {
+  /*  public Employee(int eid, String ename, Address address, char gender, Map map) {
         this.eid = eid;
         this.ename = ename;
         this.address = address;
@@ -57,8 +62,9 @@ public class Employee extends Address{
         return "Employee{" +
                 "eid=" + eid +
                 ", ename='" + ename + '\'' +
-                ", address=" + super.toString() +
-                ", gender=" + gender + ", HashMap=" + map +
+                ", address='" + address1 + '\'' +
+ //               ", address=" + super.toString() +
+                ", gender=" + gender + ", Map=" + map +
                 '}';
     }
     public void display()

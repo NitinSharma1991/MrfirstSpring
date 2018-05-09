@@ -22,12 +22,12 @@ public class Client {
           ApplicationContext context = new ClassPathXmlApplicationContext("employeebean.xml");
    //   Employee employee = (Employee) beanFactory.getBean("emp1");
    //   Employee employee1 = (Employee) beanFactory.getBean("emp2");
-        Employee employee = (Employee) context.getBean("emp1");
-        Employee employee1 = (Employee) context.getBean("emp2");
-     //  System.out.println("Employee one details"+employee);
+         Employee employee = (Employee) context.getBean("emp1");
+         Employee employee1 = (Employee) context.getBean("emp2");
+         System.out.println("Employee one details"+employee);
    //   System.out.println("Employee two details"+employee1);
-       employee1.display();
-        ((ClassPathXmlApplicationContext) context).close();
+          employee.display();
+         ((ClassPathXmlApplicationContext) context).close();
 
   }
 
