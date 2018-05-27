@@ -1,5 +1,7 @@
 package com.nitin;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
@@ -7,6 +9,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextException;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
+
+import java.util.Calendar;
 
 public class Client {
   public static void main(String []args){
@@ -28,8 +32,11 @@ public class Client {
    //   Employee employee = (Employee) beanFactory.getBean("emp1");
    //   Employee employee1 = (Employee) beanFactory.getBean("emp2");
          Employee employee = (Employee) context.getBean("emp1");
+         LogFactory LF = (LogFactory) context.getBean("LF");
+         Calendar calendar = (Calendar) context.getBean("C");
+          Log log =  LF.getInstance("Client.class");
     //     Employee employee1 = (Employee) context.getBean("emp2");
-          System.out.println("Employee one details"+employee);
+          System.out.println("Employee one details"+employee+calendar.getTime());
    //     System.out.println("Employee two details"+employee1);
           employee.display();
          ((ClassPathXmlApplicationContext) context).close();

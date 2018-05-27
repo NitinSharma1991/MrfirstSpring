@@ -13,6 +13,8 @@
         <property name="zipcode" value = "10"></property>
         <property name="address" value="Indirapuram"></property>
     </bean>
+    <bean id = "C" class="java.util.Calendar" factory-method="getInstance"/>
+    <bean id = "LF" class="org.apache.commons.logging.LogFactory" factory-method="getFactory"/>
     <!-- to activate required anotation -->
  <!--  <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"> </bean>
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"> </bean> -->
