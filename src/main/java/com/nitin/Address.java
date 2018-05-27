@@ -1,5 +1,8 @@
 package com.nitin;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Address {
     private String address;
     private String zipcode;

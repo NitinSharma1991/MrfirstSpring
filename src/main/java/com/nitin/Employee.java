@@ -1,23 +1,36 @@
 package com.nitin;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Required;
+import org.springframework.stereotype.Component;
+
 import java.util.*;
 import  java.util.Map.Entry;
-
-public class Employee extends Address{
+@Component
+public class Employee {
     private int eid;
     private String ename;
-
-
-
-    public void setAddress1(Address address) {
-        this.address1 = address;
-    }
-
+    private int kaka;
+    @Autowired() @Qualifier(value = "address2")
     private Address address1;
 
-    public Address getAddress1() {
-        return address1;
+    public int getKaka() {
+        return kaka;
     }
+
+    public void setKaka(int kaka) {
+        this.kaka = kaka;
+    }
+
+  /*  public void setAddress1(Address address) {
+        this.address1 = address;
+    } */
+
+
+ /*   public Address getAddress1() {
+        return address1;
+    } */
 
     private char gender;
     private Map<Integer,String> map;
@@ -63,8 +76,9 @@ public class Employee extends Address{
                 "eid=" + eid +
                 ", ename='" + ename + '\'' +
                 ", address='" + address1 + '\'' +
- //               ", address=" + super.toString() +
+ //              ", address=" + super.toString() +
                 ", gender=" + gender + ", Map=" + map +
+                ", kaka=" + kaka+
                 '}';
     }
     public void display()
