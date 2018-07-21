@@ -21,7 +21,7 @@
     <context:component-scan base-package="com.nitin"/>
 
 
-<bean id = "emp1" class = "com.nitin.Employee" P:kaka="1" init-method="myInit" destroy-method="myDestroy" scope="prototype">
+<bean id = "emp1" class = "com.nitin.Employee" P:kaka="1234" scope="prototype">
     <property name="eid" value = "10"></property>
     <property name="ename" value="Nitin"></property>
     <property name="gender" value="M"></property>
@@ -36,7 +36,8 @@
 
 </bean>
 
-   <bean id = "emp2" class = "com.nitin.Employee" init-method="myInit" destroy-method="myDestroy" >
+  <!-- <bean id = "emp2" class = "com.nitin.Employee" init-method="myInit" destroy-method="myDestroy" > -->
+    <bean id = "emp2" class = "com.nitin.Employee" >
         <property name="eid" value = "102"></property>
         <property name="ename" value="Nitin1"></property>
         <property name="gender" value="M"></property>
