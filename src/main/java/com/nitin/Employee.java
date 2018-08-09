@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.*;
 import  java.util.Map.Entry;
 @Component
@@ -84,11 +86,13 @@ public class Employee {
     }
     public void display()
     {
-        Iterator itr = map.entrySet().iterator();
+        map.entrySet().forEach(entry->System.out.println("Key"+entry.getKey()+entry.getValue()));
+      /*  Iterator itr = map.entrySet().iterator();
         while(itr.hasNext()){
             Map.Entry<Integer,String> entry = (Map.Entry) itr.next();
             System.out.println(entry.getKey()+" "+ entry.getValue());
-        }
+        }*/
+
     }
 
     public char getGender() {
@@ -98,10 +102,11 @@ public class Employee {
     public void setGender(char gender) {
         this.gender = gender;
     }
+@PostConstruct
 public void myInit(){
     System.out.println("Object Initialized");
 }
-
+@PreDestroy
     public void myDestroy(){
         System.out.println("Object Destroyed");
     }
